@@ -1,4 +1,4 @@
-import type { Plugin } from "astro"
+import type { Plugin } from "vite"
 
 global {
 	declare module "*?file" {

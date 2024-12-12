@@ -66,6 +66,7 @@ export default function viteFilePlugin() {
 	return plugin
 }
 
+/** @type {Record<string, string>} */
 const contentTypes = {
 	// text
 	".css": "text/css",
