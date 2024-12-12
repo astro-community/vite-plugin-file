@@ -1,5 +1,3 @@
-import type { Plugin } from "vite"
-
 global {
 	declare module "*?file" {
 		// properties
@@ -37,6 +35,12 @@ global {
 	}
 }
 
-declare const plugin: () => Plugin
+declare const plugin: () => {
+	name: "vite-plugin-file"
+	enforce: "pre"
+
+	resolveId(source: string, importer?: string): Promise<string | undefined>
+	load(id: string): { code: string } | undefined
+}
 
 export default plugin
